@@ -11,17 +11,23 @@
 // you can do this!
 // Execute `rustlings hint traits2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+
 
 trait AppendBar {
     fn append_bar(self) -> Self;
 }
 
 //TODO: Add your code here
+impl AppendBar for Vec<String> {
+    fn append_bar(mut self) -> Self {
+        self.push("Bar".to_string());
+        self
+    }
+}
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::AppendBar;
 
     #[test]
     fn is_vec_pop_eq_bar() {
